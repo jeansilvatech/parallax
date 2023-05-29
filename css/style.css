@@ -107,6 +107,10 @@ header h1{
     justify-content: space-between;
     align-items: center;
 }
+.section-one,
+.section-two{
+    transition: 800ms;
+}
 .section-one img,
 .section-two img{
     width: 50%;
@@ -123,6 +127,39 @@ header h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 800ms;
+}
+.section-text:hover{
+    width: 80%;
+    background-color: rgba(0, 0, 0, 1);
+}
+.section-image{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-image: url('../img/image1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: section 5s infinite;
+    transition: 800ms;
+}
+.section-two .section-image{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-image: url('../img/image2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: section 5s infinite;
+    transition: 800ms;
+}
+.section-image:hover{
+    background-position: left;
+
 }
 .section-text p{
     width: 400px;

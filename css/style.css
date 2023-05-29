@@ -32,7 +32,7 @@ body{
     transition: .6s;
 }
 .container nav.scroll{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--three);
     height: 90px;
 }
 nav .logo i{
@@ -201,7 +201,7 @@ footer p{
         font-size: 40px;
     }
     .container nav.scroll{
-        background-color:rgba(0, 0, 0, 0.9);
+        background-color:var(--three);
     }
     .section-one{
         flex-direction: column;

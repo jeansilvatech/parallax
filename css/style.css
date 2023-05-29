@@ -32,7 +32,7 @@ body{
     transition: .6s;
 }
 .container nav.scroll{
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     height: 90px;
 }
 nav .logo i{
@@ -71,7 +71,7 @@ nav .buttons a{
        transform: scale(1);
     }
     50%{
-        transform: scale(1.5);
+        transform: scale(2);
     }
     
 }
@@ -131,7 +131,7 @@ header h1{
 }
 .section-text:hover{
     width: 80%;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: var(--three);
 }
 .section-image{
     width: 50%;
@@ -209,8 +209,8 @@ footer p{
     .section-two{
         flex-direction: column-reverse;
     }
-    .section-one img,
-    .section-two img{
+    .section-one .section-image,
+    .section-two .section-image{
         width: 100%;
     }
     .section-one .section-text,

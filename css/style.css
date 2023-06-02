@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 :root{
     --primary: #8ECAE6;
@@ -32,7 +33,7 @@ body{
     transition: .6s;
 }
 .container nav.scroll{
-    background-color: var(--three);
+    background-color: rgba(2, 48, 71, 1);
     height: 90px;
 }
 nav .logo i{
@@ -46,8 +47,13 @@ nav .buttons a{
     margin: 10px;
     padding: 10px;
     text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: 500ms;
 
 }
+nav .buttons a:hover{
+    border-bottom: 2px solid;
+   }
 .container nav{
     display: flex;
     justify-content: space-around;
@@ -65,7 +71,14 @@ nav .buttons a{
     left: 0;
     z-index: -1;
     animation:bg 15s ease-in-out infinite;
+    transition: 500ms;
 }
+/* .bg-site.scroll-section1{
+    background-image: url("../img/image1.jpg");
+}
+.bg-site.scroll-section2{
+    background-image: url("../img/image2.jpg");
+} */
 @keyframes bg{
     0%, 100%{
        transform: scale(1);
@@ -87,6 +100,7 @@ header{
     justify-content: center;
     align-items: center;
 }
+
 header img{
     width: 50%;
     height: 100%;
@@ -101,7 +115,9 @@ header h1{
     color: white;
     font-weight: 10px;
     text-align: center;
+    transition: 500ms;
 }
+
 .section-one{
     display: flex;
     justify-content: space-between;
@@ -161,6 +177,7 @@ header h1{
     background-position: left;
 
 }
+
 .section-text p{
     width: 400px;
     font-size: 30px;
@@ -197,6 +214,7 @@ footer p{
         margin: 0px;
         padding: 10px 5px;
     }
+   
     header h1{
         font-size: 40px;
     }

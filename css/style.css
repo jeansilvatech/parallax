@@ -14,7 +14,7 @@
 body{
     font-family: 'Josefin Sans', sans-serif;
     background-color: var(--three);
-    
+    overflow-x: hidden;
     
 }
 
@@ -73,12 +73,7 @@ nav .buttons a:hover{
     animation:bg 15s ease-in-out infinite;
     transition: 500ms;
 }
-/* .bg-site.scroll-section1{
-    background-image: url("../img/image1.jpg");
-}
-.bg-site.scroll-section2{
-    background-image: url("../img/image2.jpg");
-} */
+
 @keyframes bg{
     0%, 100%{
        transform: scale(1);
@@ -88,11 +83,17 @@ nav .buttons a:hover{
     }
     
 }
+.section-one{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 header,
 .section-one,
 .section-two{
     width: 100%;
     height: 100vh;
+    transition: 800ms;
 }
 
 header{
@@ -118,37 +119,29 @@ header h1{
     transition: 500ms;
 }
 
-.section-one{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.section-one,
-.section-two{
-    transition: 800ms;
-}
-.section-one img,
-.section-two img{
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
 
+.section{
+    background-color: rgba(0, 0, 0, 0.5);
+}
 .section-one .section-text,
 .section-two .section-text{
-    width: 50%;
+    width: 0%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 800ms;
+    opacity: 0;
+    
 }
-.section-text:hover{
-    background-color: var(--three);
+.section-one .section-text{
+    transform: translateX(1500px);
 }
-.section-image{
+.section-two .section-text{
+    transform: translateX(-1500px);
+}
+.section-one .section-image{
     width: 50%;
     height: 100%;
     object-fit: cover;
@@ -157,8 +150,8 @@ header h1{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    animation: section 5s infinite;
     transition: 800ms;
+    
 }
 .section-two .section-image{
     width: 50%;
@@ -167,17 +160,23 @@ header h1{
     object-position: center;
     background-image: url('../img/image2.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: center;
     background-size: cover;
-    animation: section 5s infinite;
     transition: 800ms;
 }
-
+.section-image{
+    cursor: pointer;
+}
 .section-image:hover{
     background-position-x: left;
-
+    scale: 0.7;
+    opacity: 1;
+    border: 10px inset #FB8500;
+    transition: 800ms;
 }
-
+.section-two .section-image:hover{
+    border: 10px inset #219EBC;
+}
 .section-text p{
     width: 400px;
     font-size: 30px;
@@ -190,11 +189,44 @@ header h1{
     align-items: center;
     flex-direction: row-reverse;
 }
+
+@keyframes enterText1{
+    0%{
+        transform: translateX(1500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+@keyframes enterText2{
+    0%{
+        transform: translateX(-1500px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
 .section-one .section-image:hover~ .section-text{
+    transform: translateX(0);
+    opacity: 1;
     background-color: var(--five);
+    width: 50%;
+    animation: enterText1 1s ease-in-out;
+    transition: 800ms;
  }
 .section-two .section-image:hover~ .section-text{
+    transform: translateX(0);
+    opacity: 1;
     background-color: var(--secondary);
+    width: 50%;
+    animation: enterText2 1s ease-in-out;
+    transition: 800ms;
  }
 footer{
     width: 100%;
